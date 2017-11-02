@@ -3,8 +3,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="InfoCarritoAjax.js" charset="UTF-8"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="InfoCarritoAjax.js" charset="UTF-8"></script>
         <!--<script type="text/javascript" src="InfoCarritoAjax.js"></script>-->
         <script type="text/javascript" src="InfoCheckOut.js"></script>
         <script type="text/javascript" src="seleccionProductoAjax.js"></script>
@@ -74,9 +74,9 @@
                 color: white
             }
         </style>
-        <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8&callback=initMap">
-        </script>
+        
+        
+        
         <style>
             #map {
              height: 200px;
@@ -143,14 +143,6 @@
                 <input class="btn" type="submit" id="Confirmar" value="Confirmar"/>-->
                 <button onclick="mifuncion()">Confirmar</button>
                 <div id="map"></div>
-    <script>
-        
-        
-        
-        
-        
-        
-    </script>
             </center>
 
         </form>

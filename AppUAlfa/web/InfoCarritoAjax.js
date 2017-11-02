@@ -1,15 +1,15 @@
 $(document).ready(function () {
 
 
-    //var opcion = $('#opcion').val();
+    var opcion = $('#opcion').val();
 
     $.ajax({
         url: 'MainMenuServlet',
         type: 'GET',
-        data: {},
+        data: {opcion:opcion},
         dataType: 'json',
         success: function (data) {
-
+            console.log(data.nombre);
             var i = 0;
             for (i = 0; i < data.Productos.length; i++) {
                 console.log(data.Productos[i].nombre);
@@ -112,6 +112,7 @@ var map;
 
                 },
                 error: function(){
+                    console.log("Se jodio papá");
                     $('#ack').val("ERROR FATAL");
                 }
             });

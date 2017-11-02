@@ -111,10 +111,11 @@ public class MainMenuServlet extends HttpServlet {
                         json.put("nombre", CarroSesion.get(i).getNombre());
                         json.put("cantidad", String.valueOf(CarroSesion.get(i).getCantidad()));
                         json.put("precio", String.valueOf(CarroSesion.get(i).getPrecio()));
+                        System.out.println("PRUEBA JSON NOMBRE: "+json.get("nombre"));
                         array.put(json);
 
                     }
-
+                       
                     //Envia Precio y cantidad
 //                    String x = Mateo.PrecioTotal(CarroSesion);
 //                    JSONObject total = new JSONObject();
