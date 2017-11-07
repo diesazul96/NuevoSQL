@@ -4,9 +4,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script type="text/javascript" src="InfoCarritoAjax.js" charset="UTF-8"></script>
-        <!--<script type="text/javascript" src="InfoCarritoAjax.js"></script>-->
-        <script type="text/javascript" src="InfoCheckOut.js"></script>
+        <!--<script type="text/javascript" src="InfoCarritoAjax.js" charset="UTF-8"></script>-->
+        <script type="text/javascript" src="InfoCheckOut.js" charset="UTF-8"></script>
         <script type="text/javascript" src="seleccionProductoAjax.js"></script>
         <link href="StyleLogin.css" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
@@ -88,18 +87,18 @@
                 jQuery("#loader").fadeOut("slow");
                 var Ancho = screen.width;
                 var Alto = screen.height;
-                alert(Ancho + " Y " + Alto);
+                //alert(Ancho + " Y " + Alto);
 
 
                 if ((Ancho <= 600)) {
 
-                    alert("Menor a 600");
+                    //alert("Menor a 600");
 
                 }
 
                 if ((Ancho => 600)) {
 
-                    alert("Mayor a 600");
+                    //alert("Mayor a 600");
                     $('#llegada2').append('<a href="listarTiendas.jsp"><img src="Pictures/AppuMartTextoBorde.png"></a>');
                     $('#llegada').append('<img src="Pictures/checkout.png">');
                 }
