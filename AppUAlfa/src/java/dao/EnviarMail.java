@@ -76,7 +76,7 @@ public class EnviarMail {
     }
     
     
-    public void sendCheckOut(String toAdd, ArrayList<String> orden, String map){
+    public void sendCheckOut(String toAdd,String map){
     
         try {
             System.out.println("***********EMPEZANDO A ENVIAR MAIL/INICIO CONFIGURACIONES**********");
@@ -99,25 +99,12 @@ public class EnviarMail {
                     new InternetAddress(toAdd));
             message.setSubject("Tienes un nuevo pedido!!");
             
-            System.out.println("TAMAÑO ORDEN "+orden.size()+" Tu orden: "+orden.get(0)+"\n"+orden.get(1));
-            
-            String pedido="";
-            
-            for (int i = 0; i < orden.size(); i++) {
-                pedido=pedido+orden.get(i)+" ";
-            }
-            
-            System.out.println("ESTE ES EL TEXTO DEL PEDIDO!!"+pedido);
             System.out.println("ESTE ES EL HTML DEL PEDIDO!!"+map);
-            
-            final MimeBodyPart textPart = new MimeBodyPart();
-            textPart.setText(pedido, "UTF-8"); 
-            // HTML version
+
             final MimeBodyPart htmlPart = new MimeBodyPart();
             htmlPart.setContent(map, "text/html");
             // Create the Multipart.  Add BodyParts to it.
             final Multipart mp = new MimeMultipart("alternative");
-            mp.addBodyPart(textPart);
             mp.addBodyPart(htmlPart);
             
             message.setContent(mp);

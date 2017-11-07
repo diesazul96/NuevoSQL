@@ -118,21 +118,16 @@ public class InfoCheckOutServlet extends HttpServlet {
                     correo = mail.CorreoTienda(prod.get(i).getTienda());
                     //correo = mail.CorreoTienda(1);
                     System.out.println("Correo:"+correo);
-                    String map = "<img src='https://maps.googleapis.com/maps/api/staticmap?center="+request.getParameter("latitud")+","+request.getParameter("longitud")+"&zoom=15&size=400x400&maptype=roadmap\n" +
+                    String pedido="";
+                    for (int j = 0; j < cadena.size(); j++) {
+                        pedido=pedido+cadena.get(j);
+                    }
+                    
+                    System.out.println("PEDIDOOOOO:"+pedido);
+                    
+                    String map = "<p>"+pedido+"</p><img src='https://maps.googleapis.com/maps/api/staticmap?center="+request.getParameter("latitud")+","+request.getParameter("longitud")+"&zoom=15&size=400x400&maptype=roadmap\n" +
 "&markers=color:red%7Clabel:C%7C"+request.getParameter("latitud")+","+request.getParameter("longitud")+"&key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8'/>";
-//                    String map = "<div id='map' style='width:400px;height:200px;'></div>" +
-//                        "<script>\n" +
-//                        "function myMap() {\n" +
-//                        "var mapOptions = {\n" +
-//                        "    center: new google.maps.LatLng("+request.getParameter("pos")+"),\n" +
-//                        "    zoom: 15,\n" +
-//                        "}\n" +
-//                        "var map = new google.maps.Map(document.getElementById('map'), mapOptions);\n" +
-//                        "}\n" +
-//                        "</script>\n" +
-//                        "\n" +
-//                        "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAJOwdex9jqp6DZ-klv-NlBxoAmwaCyKt8&callback=myMap'></script>";
-                    mail.sendCheckOut(correo, cadena, map);
+                    mail.sendCheckOut(correo,map);
                     
                     session.setAttribute("carrito", null);
                     System.out.println("-------------CORREO ENVIADO-------------");
