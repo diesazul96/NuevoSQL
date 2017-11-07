@@ -79,7 +79,7 @@ public class InfoCheckOutServlet extends HttpServlet {
             String opcion="";
 
             opcion = request.getParameter("opcion1");
-            String comentario = request.getParameter("comment");
+            String comentario = "Comentarios: "+request.getParameter("comment");
             System.out.println("UBICACION: "+request.getParameter("latitud")+" "+request.getParameter("longitud"));
 //            String pos = (String) request.getParameter("pos");
 
@@ -106,7 +106,7 @@ public class InfoCheckOutServlet extends HttpServlet {
 
                     
                     for (int j = 0; j < prod.size(); j++) {
-                        String orden = "\n"+"Producto: " + prod.get(j).getNombre() + "\n"+"Cantidad: " + Integer.toString(prod.get(j).getCantidad()) + "\n"+"Precio: " + Integer.toString(prod.get(j).getPrecio());
+                        String orden = "Producto: " + prod.get(j).getNombre() + "<br>"+"Cantidad: " + Integer.toString(prod.get(j).getCantidad()) + "<br>"+"Precio: " + Integer.toString(prod.get(j).getPrecio())+ "<br>"+ "<br>";
                         //String orden = "" + "Papitas" + "" + "2" + "" + "100";
                         System.out.println("PRODUCTO "+j+": "+orden);
                         cadena.add(orden);
